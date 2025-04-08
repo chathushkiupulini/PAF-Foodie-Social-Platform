@@ -16,7 +16,7 @@
 
 - **Frontend**: React.js + Tailwind CSS
 - **Backend**: Spring Boot (Java)
-- **Database**: [Your choice – e.g., MySQL / PostgreSQL / MongoDB]
+- **Database**: [MySQL ]
 - **Authentication**: OAuth 2.0
 - **Version Control**: Git + GitHub
 
