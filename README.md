@@ -1,6 +1,4 @@
-Here’s a clean and professional **README description** you can use for your **Foodie Social Platform** GitHub repo:
 
----
 
 ## 🍽️ Foodie Social Platform
 
