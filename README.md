@@ -26,5 +26,4 @@ To build an engaging and user-friendly platform that empowers culinary enthusias
 - Express creativity through cooking
 - Learn new techniques and cuisines
 - Build meaningful connections in a food-loving community
-
 ---
