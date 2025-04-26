@@ -36,13 +36,15 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/public/**").permitAll()
+                .requestMatchers("/error").permitAll() // <-- Add this line
                 .anyRequest().authenticated()
             )
             .authenticationProvider(authenticationProvider())
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
-
+    
         return http.build();
     }
+    
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
