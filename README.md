@@ -4,7 +4,7 @@
 
 **Foodie Social Platform** is a vibrant social hub for cooking enthusiasts to explore, share, and grow their culinary skills. Whether you're a home cook or an aspiring chef, this platform brings together food lovers through recipe sharing, interactive cooking communities, and structured learning experiences.
 
-### 🔥 Key Features
+## 🔥 Key Features
 
 - 📝 **Recipe Sharing** – Share your favorite recipes with ingredients, steps, images, and tags. Search and filter through an ever-growing collection.
 - 👤 **User Profiles & Social Connections** – Customize your profile, follow other cooks, and discover new foodies.
