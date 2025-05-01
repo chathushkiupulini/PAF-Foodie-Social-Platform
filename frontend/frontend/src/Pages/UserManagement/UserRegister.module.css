@@ -1,0 +1,263 @@
+/* UserRegister.module.css - Foodie Social Media Theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Food-Inspired Color Palette */
+  --tomato-red: #FF5349;
+  --golden-yellow: #FFD700;
+  --spiced-orange: #FF7F50;
+  --leafy-green: #5DBE7E;
+  --avocado-cream: #B5C78E;
+  --mint-teal: #40E0D0;
+  --warm-beige: #F5F5DC;
+  --charcoal-gray: #333333;
+  --soft-white: #FFF9F0;
+  --berry-pink: #E75480;
+  --eggplant-purple: #614051;
+
+  /* UI Variables */
+  --border-radius: 12px;
+  --border-radius-lg: 24px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Container with Food Background */
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: 
+    linear-gradient(rgba(255, 249, 240, 0.9), rgba(255, 249, 240, 0.9)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  font-family: 'Poppins', sans-serif;
+}
+
+.authInnerContainer {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  background: var(--soft-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  min-height: 650px;
+}
+
+/* Food Hero Section */
+.authHero {
+  flex: 1;
+  position: relative;
+  display: none;
+  background: linear-gradient(135deg, rgba(97, 64, 81, 0.9), rgba(255, 127, 80, 0.7));
+}
+
+.authHeroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80') center/cover no-repeat;
+  opacity: 0.8;
+  mix-blend-mode: overlay;
+}
+
+/* Form Container */
+.authFormContainer {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.authLogo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF7F50"><path d="M12 3c-4.97 0-9 3.19-9 7 0 2.38 1.19 4.47 3 5.74V21h12v-5.26c1.81-1.27 3-3.36 3-5.74 0-3.81-4.03-7-9-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>') center/contain no-repeat;
+}
+
+.authHeader {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.authTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--eggplant-purple);
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Form Elements */
+.authForm {
+  margin-top: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--spiced-orange);
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--avocado-cream);
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  background-color: var(--soft-white);
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--golden-yellow);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+/* Skills Input */
+.skillsDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  min-height: 1.5rem;
+}
+
+.skillTag {
+  background-color: var(--leafy-green);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.skillInputContainer {
+  position: relative;
+}
+
+.addSkillButton {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--spiced-orange);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.addSkillButton:hover {
+  color: var(--tomato-red);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Submit Button */
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right, var(--spiced-orange), var(--tomato-red));
+  color: var(--soft-white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.submitButton:hover {
+  background: linear-gradient(to right, var(--tomato-red), var(--berry-pink));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Footer Link */
+.authFooter {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--charcoal-gray);
+}
+
+.authLink {
+  color: var(--spiced-orange);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.authLink:hover {
+  color: var(--tomato-red);
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .authHero {
+    display: block;
+  }
+  
+  .authFormContainer {
+    flex: 0.6;
+    padding: 4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .authContainer {
+    padding: 1rem;
+  }
+  
+  .authInnerContainer {
+    min-height: auto;
+  }
+  
+  .authFormContainer {
+    padding: 2rem;
+  }
+  
+  .authTitle {
+    font-size: 1.8rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formGroup, .submitButton {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.formGroup:nth-child(1) { animation-delay: 0.1s; }
+.formGroup:nth-child(2) { animation-delay: 0.2s; }
+.formGroup:nth-child(3) { animation-delay: 0.3s; }
+.formGroup:nth-child(4) { animation-delay: 0.4s; }
+.formGroup:nth-child(5) { animation-delay: 0.5s; }
+.submitButton { animation-delay: 0.6s; }

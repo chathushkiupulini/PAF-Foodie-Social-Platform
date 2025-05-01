@@ -1,0 +1,389 @@
+/* FoodieSocial.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@500;600&display=swap');
+
+:root {
+  /* Food-Inspired Color Palette */
+  --tomato-red: #FF5349;
+  --golden-yellow: #FFD700;
+  --spiced-orange: #FF7F50;
+  --leafy-green: #5DBE7E;
+  --avocado-cream: #B5C78E;
+  --mint-teal: #40E0D0;
+  --warm-beige: #F5F5DC;
+  --charcoal-gray: #333333;
+  --soft-white: #FFF9F0;
+  --berry-pink: #E75480;
+  --eggplant-purple: #614051;
+
+  /* UI Colors */
+  --primary: var(--spiced-orange);
+  --primary-dark: #E66C37;
+  --accent: var(--golden-yellow);
+  --accent-dark: #E6B91E;
+  --success: var(--leafy-green);
+  --danger: var(--tomato-red);
+  --info: var(--mint-teal);
+  --text-primary: var(--charcoal-gray);
+  --text-light: var(--soft-white);
+  --bg-primary: var(--soft-white);
+  --bg-secondary: var(--warm-beige);
+  
+  /* Effects */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --border-radius: 12px;
+  --border-radius-lg: 24px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Food-Themed Background */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 83, 73, 0.15), 
+      rgba(255, 159, 28, 0.15)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat fixed;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating Food Icons Animation */
+.container::before, .container::after {
+  content: '';
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+  animation: float 25s linear infinite;
+}
+
+.container::before {
+  width: 200px;
+  height: 200px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF5349"><path d="M18 8c0-3.31-2.69-6-6-6S6 4.69 6 8c0 4.5 6 11 6 11s6-6.5 6-11zm-8 0c0-1.1.9-2 2-2s2 .9 2 2-.89 2-2 2c-1.1 0-2-.9-2-2zM5 21h14v2H5z"/></svg>');
+  top: -50px;
+  right: -50px;
+}
+
+.container::after {
+  width: 300px;
+  height: 300px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235DBE7E"><path d="M12 3c-4.97 0-9 3.19-9 7 0 2.38 1.19 4.47 3 5.74V21h12v-5.26c1.81-1.27 3-3.36 3-5.74 0-3.81-4.03-7-9-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>');
+  bottom: -50px;
+  left: -50px;
+  animation-direction: reverse;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(50px, 50px) rotate(5deg); }
+  50% { transform: translate(100px, 0) rotate(0deg); }
+  75% { transform: translate(50px, -50px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Foodie Card Design */
+.card {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255, 249, 240, 0.95);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  min-height: 650px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(181, 199, 142, 0.3);
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Food Hero Section */
+.hero {
+  flex: 1;
+  position: relative;
+  display: none;
+  background: linear-gradient(135deg, rgba(97, 64, 81, 0.9), rgba(255, 127, 80, 0.7));
+}
+
+.heroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80') center/cover no-repeat;
+  opacity: 0.8;
+  mix-blend-mode: overlay;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding: 3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--soft-white);
+  margin-bottom: 1rem;
+  font-family: 'Dancing Script', cursive;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.heroSubtitle {
+  font-size: 1.1rem;
+  color: var(--avocado-cream);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.featureIcon {
+  background: rgba(255, 255, 255, 0.2);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.featureItem span {
+  color: var(--soft-white);
+  font-weight: 500;
+}
+
+/* Form Section */
+.formContainer {
+  flex: 0.6;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--eggplant-purple);
+  margin-bottom: 0.75rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--charcoal-gray);
+  max-width: 350px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Food-Themed Form Elements */
+.form {
+  margin: 2rem 0;
+}
+
+.formGroup {
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--spiced-orange);
+}
+
+.input {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border: 1px solid var(--avocado-cream);
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  background-color: var(--soft-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--golden-yellow);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+/* Foodie Button with Gradient */
+.button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right, var(--spiced-orange), var(--tomato-red));
+  color: var(--soft-white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.button:hover {
+  background: linear-gradient(to right, var(--tomato-red), var(--berry-pink));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Social Login Buttons */
+.socialLogin {
+  margin: 2rem 0;
+  position: relative;
+  text-align: center;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  color: var(--charcoal-gray);
+  font-size: 0.875rem;
+  margin: 1.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--avocado-cream);
+  margin: 0 0.75rem;
+}
+
+.socialButton {
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: var(--transition);
+  margin-bottom: 0.75rem;
+}
+
+.googleButton {
+  background-color: white;
+  color: var(--charcoal-gray);
+  border: 1px solid #dadce0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.googleButton:hover {
+  background-color: #f8f9fa;
+  border-color: #dadce0;
+  box-shadow: var(--shadow-sm);
+}
+
+.googleIcon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.facebookButton {
+  background-color: #1877F2;
+  color: white;
+  border: none;
+}
+
+.facebookButton:hover {
+  background-color: #166FE5;
+}
+
+/* Footer Link */
+.footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--charcoal-gray);
+}
+
+.link {
+  color: var(--spiced-orange);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.link:hover {
+  color: var(--tomato-red);
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .hero {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .card {
+    min-height: auto;
+  }
+  
+  .formContainer {
+    padding: 3rem 2rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+}

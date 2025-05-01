@@ -1,0 +1,346 @@
+/* Savored Navbar Styles */
+.savored-navbar {
+  background: linear-gradient(135deg, #E63946, #FF9F1C);
+  height: 80px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(230, 57, 70, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.utensils-icon {
+  color: #E63946;
+}
+
+.heart-icon {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  color: #E63946;
+  background: #FFF;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFF;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+  position: relative;
+  font-family: 'Playfair Display', serif;
+}
+
+.nav-link:hover {
+  color: #FFF;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.nav-link.active {
+  color: #FFF;
+  font-weight: 700;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #FFF;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+  color: #FFF;
+  transition: transform 0.3s ease;
+}
+
+.notification-icon:hover {
+  transform: scale(1.1);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #2EC4B6;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.user-avatar:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-initials {
+  color: #FFF;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.logout-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.logout-btn:hover {
+  color: #FFF;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* User Profile Card */
+.user-profile-card {
+  position: absolute;
+  top: 90px;
+  right: 40px;
+  width: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(230, 57, 70, 0.2);
+  border: 1px solid rgba(255, 159, 28, 0.3);
+  z-index: 1001;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-card-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.close-card-btn:hover {
+  color: #E63946;
+  background: rgba(230, 57, 70, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-right: 20px;
+}
+
+.profile-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #F1FAEE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid #FF9F1C;
+}
+
+.avatar-img-large {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-initials-large {
+  color: #E63946;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.profile-info h3 {
+  color: #1D3557;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.profile-info p {
+  color: #457B9D;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.card-details {
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  margin-bottom: 12px;
+}
+
+.detail-label {
+  color: #457B9D;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+.detail-value {
+  color: #1D3557;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-profile-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #E63946;
+  color: #FFF;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.edit-profile-btn:hover {
+  background: #C1121F;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(230, 57, 70, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .savored-navbar {
+      padding: 0 20px;
+  }
+  
+  .nav-links {
+      gap: 15px;
+  }
+  
+  .user-profile-card {
+      right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-name {
+      font-size: 1.6rem;
+  }
+  
+  .nav-links {
+      display: none; /* Will be replaced with mobile menu */
+  }
+  
+  .user-profile-card {
+      width: calc(100% - 40px);
+      right: 20px;
+  }
+}
