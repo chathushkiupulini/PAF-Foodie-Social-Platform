@@ -6,7 +6,7 @@
 
 ## 🔥 Key Features
 
-- 📝 **Recipe Sharing** – Share your favorite recipes with ingredients, steps, images, and tags. Search and filter through an ever-growing collection.
+- 📝 **Recipe Sharing** – Share your favorite recipes with ingredients, steps, images, and tags. Search and filter through an ever-growing collection.#*
 - 👤 **User Profiles & Social Connections** – Customize your profile, follow other cooks, and discover new foodies.
 - 💬 **Interactive Feedback** – Like, comment, rate, and review recipes. Get real-time notifications for engagement.
 - 👩‍🍳 **Cooking Communities** – Join themed groups, cooking challenges, and discussion threads to connect with like-minded foodies.
