@@ -221,4 +221,3 @@ function AddNewPost() {
 }
 
 export default AddNewPost;
-
