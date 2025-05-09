@@ -15,6 +15,7 @@ function AddLearningProgress() {
     postOwnerID: '',
     postOwnerName: ''
   });
+  
 
   useEffect(() => {
     const userId = localStorage.getItem('userID');
