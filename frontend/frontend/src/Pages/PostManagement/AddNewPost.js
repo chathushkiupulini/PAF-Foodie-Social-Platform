@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Upload, Image as ImageIcon, Video as VideoIcon, X, Plus, Send, Type, FileText, Loader } from 'lucide-react';
 import './PostManagement.css';
 
+// This component allows users to create a new post by uploading media files and providing a title and description.
 function AddNewPost() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -13,7 +14,7 @@ function AddNewPost() {
 
   const handleMediaChange = (e) => {
     const files = Array.from(e.target.files);
-    const maxFileSize = 50 * 1024 * 1024;
+    const maxFileSize = 50 * 1024 * 1024; // 50MB
 
     let imageCount = 0;
     let videoCount = 0;
